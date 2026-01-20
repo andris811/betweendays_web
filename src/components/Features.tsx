@@ -50,12 +50,12 @@ export default function Features() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <ScrollAnimation key={index} delay={index * 100}>
-              <div className="bg-white border border-[#E5DCC8] p-8 rounded-2xl hover:shadow-2xl hover:border-[#4A7BA7]/50 hover:-translate-y-2 transition-all duration-300">
+              <div className="bg-white border border-[#E5DCC8] p-8 rounded-2xl hover:shadow-2xl hover:border-[#4A7BA7]/50 hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
                 <div className="text-[#4A7BA7] mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   {feature.description}
                 </p>
               </div>

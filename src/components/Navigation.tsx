@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +10,7 @@ export default function Navigation() {
   const navItems = [
     { href: '#features', label: 'Features' },
     { href: '#contact', label: 'Contact' },
+    { href: '/terms-privacy', label: 'Terms & Privacy' },
   ];
 
   return (
@@ -17,11 +19,13 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 z-50">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#6B9AC4] to-[#4A7BA7] rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
+            <Image
+              src="/appIcon.png"
+              alt="Between Days Logo"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
             <span className="text-2xl font-bold text-[#4A7BA7]">Between Days</span>
           </Link>
 

@@ -1,14 +1,10 @@
-# Between Days
+# Between Days - Landing Page
 
-A simple, reliable app designed for people who live alone. Between Days helps friends and family monitor each other's well-being through daily check-ins.
+This is the marketing website for **Between Days**, an iOS app designed for people who live alone to provide peace of mind through daily check-ins.
 
-## Features
+## About the App
 
-- **Daily Check-Ins**: Simply open the app each day to confirm you're safe
-- **Automatic Alerts**: Emergency contact notified after 3 consecutive missed check-ins
-- **Privacy First**: Your data stays private with no unnecessary tracking
-- **Simple & Reliable**: Clean, distraction-free interface
-- **Works Offline**: Check-ins recorded offline and synced later
+Between Days helps friends and family monitor each other's well-being through simple daily check-ins. If someone misses check-ins for three consecutive days, their emergency contact is automatically notified.
 
 ## Tech Stack
 
@@ -89,4 +85,3 @@ All rights reserved © 2026 Between Days
 ---
 
 Made with care by [AVDev](https://andris811.github.io/avdev/)
-# betweendays_web

@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import SeeItInAction from '@/components/SeeItInAction';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -11,6 +12,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <SeeItInAction />
         <Contact />
       </main>
       <Footer />

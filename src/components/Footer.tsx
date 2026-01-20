@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-[#3D3D3D] border-t border-[#E5DCC8] text-white py-12">
@@ -5,11 +8,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#6B9AC4] to-[#4A7BA7] rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+              <Image
+                src="/appIcon.png"
+                alt="Between Days Logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               <span className="text-2xl font-bold text-[#6B9AC4]">Between Days</span>
             </div>
             <div className="flex items-center gap-4">
@@ -42,6 +47,11 @@ export default function Footer() {
               <a href="mailto:avdev2024@gmail.com" className="text-gray-400 hover:text-[#6B9AC4] transition-colors">
                 Contact
               </a>
+            </li>
+            <li>
+              <Link href="/terms-privacy" className="text-gray-400 hover:text-[#6B9AC4] transition-colors">
+                Terms & Privacy
+              </Link>
             </li>
           </ul>
         </div>

@@ -5,17 +5,17 @@ export default function SeeItInAction() {
     {
       title: 'Daily Check-In',
       description: 'Simple, one-tap check-in to let loved ones know you\'re safe',
-      placeholder: 'Check-In Screen'
+      placeholder: 'Main Screen'
     },
     {
-      title: 'Check-In History',
-      description: 'View your check-in history and track your consistency',
-      placeholder: 'History View'
+      title: 'Easy Onboarding',
+      description: 'Get started quickly with a simple, guided setup process',
+      placeholder: 'Onboarding'
     },
     {
-      title: 'Emergency Contact',
-      description: 'Set up your trusted contact for automatic notifications',
-      placeholder: 'Contact Setup'
+      title: 'Settings',
+      description: 'Manage your name, emergency contact, and language preferences',
+      placeholder: 'Settings View'
     }
   ];
 

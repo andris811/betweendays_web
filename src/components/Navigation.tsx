@@ -8,8 +8,8 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '#features', label: 'Features' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#features', label: 'Features' },
+    { href: '/#contact', label: 'Contact' },
     { href: '/terms-privacy', label: 'Terms & Privacy' },
   ];
 

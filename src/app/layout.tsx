@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Between Days - Peace of Mind for Those Who Live Alone",
   description: "A simple, reliable app designed for people who live alone. Daily check-ins help friends and family monitor each other's well-being.",
+  icons: {
+    icon: '/appIcon.png',
+    apple: '/appIcon.png',
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>

@@ -1,16 +1,21 @@
+'use client';
+
 import ScrollAnimation from './ScrollAnimation';
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
+  const t = useTranslations('contact');
+
   return (
     <section id="contact" className="py-20 sm:py-24 lg:py-32 bg-[#F5F1E8] border-t border-[#E5DCC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Get in Touch
+              {t('title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Have questions about Between Days? We&apos;d love to hear from you
+              {t('subtitle')}
             </p>
           </div>
         </ScrollAnimation>
@@ -24,8 +29,8 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Support</h3>
-                <p className="text-gray-600 mb-4">Need help? Contact our support team</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('supportTitle')}</h3>
+                <p className="text-gray-600 mb-4">{t('supportDescription')}</p>
                 <a
                   href="mailto:avdev2024@gmail.com"
                   className="text-[#4A7BA7] hover:text-[#3d6a8f] font-medium transition-colors"

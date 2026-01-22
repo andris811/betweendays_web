@@ -1,7 +1,13 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const tApp = useTranslations();
+  const locale = useLocale();
+
   return (
     <footer className="bg-[#3D3D3D] border-t border-[#E5DCC8] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,12 +16,12 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/appIcon.png"
-                alt="Between Days Logo"
+                alt={`${tApp('appName')} Logo`}
                 width={32}
                 height={32}
                 className="rounded-lg"
               />
-              <span className="text-2xl font-bold text-[#6B9AC4]">Between Days</span>
+              <span className="text-2xl font-bold text-[#6B9AC4]">{tApp('appName')}</span>
             </div>
             <div className="flex items-center gap-4">
               <a
@@ -45,18 +51,18 @@ export default function Footer() {
           <ul className="flex flex-wrap gap-6 justify-center">
             <li>
               <a href="mailto:avdev2024@gmail.com" className="text-gray-400 hover:text-[#6B9AC4] transition-colors">
-                Contact
+                {t('contact')}
               </a>
             </li>
             <li>
-              <Link href="/terms-privacy" className="text-gray-400 hover:text-[#6B9AC4] transition-colors">
-                Terms & Privacy
-              </Link>
+              <a href={`/${locale}/terms-privacy`} className="text-gray-400 hover:text-[#6B9AC4] transition-colors">
+                {t('termsPrivacy')}
+              </a>
             </li>
           </ul>
         </div>
         <div className="text-center mt-8 pt-8 border-t border-gray-900 text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Between Days. All rights reserved. | Made by <a href="https://andris811.github.io/avdev/" target="_blank" rel="noopener noreferrer" className="text-[#6B9AC4] hover:text-[#4A7BA7] transition-colors">AVDev</a></p>
+          <p>&copy; {new Date().getFullYear()} {tApp('appName')}. {t('copyright')} | {t('madeBy')} <a href="https://andris811.github.io/avdev/" target="_blank" rel="noopener noreferrer" className="text-[#6B9AC4] hover:text-[#4A7BA7] transition-colors">AVDev</a></p>
         </div>
       </div>
     </footer>

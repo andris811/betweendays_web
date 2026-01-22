@@ -1,33 +1,54 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/routing';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const tApp = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
-    { href: '/#features', label: 'Features' },
-    { href: '/#contact', label: 'Contact' },
-    { href: '/terms-privacy', label: 'Terms & Privacy' },
+    { href: '/#features', label: t('features'), isHash: true },
+    { href: '/#contact', label: t('contact'), isHash: true },
+    { href: `/${locale}/terms-privacy`, label: t('termsPrivacy'), isHash: false },
   ];
+
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
+  ];
+
+  const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
+
+  const handleLanguageChange = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+    setIsLangMenuOpen(false);
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5DCC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 z-50">
+          <a href={`/${locale}`} className="flex items-center gap-3 z-50">
             <Image
               src="/appIcon.png"
-              alt="Between Days Logo"
+              alt={`${tApp('appName')} Logo`}
               width={40}
               height={40}
               className="rounded-lg"
             />
-            <span className="text-2xl font-bold text-[#4A7BA7]">Between Days</span>
-          </Link>
+            <span className="text-2xl font-bold text-[#4A7BA7]">{tApp('appName')}</span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
@@ -43,6 +64,43 @@ export default function Navigation() {
                 </li>
               ))}
             </ul>
+
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-[#4A7BA7] transition-colors rounded-md hover:bg-[#F5F1E8]"
+                aria-label="Change language"
+              >
+                <span className="text-xl">{currentLanguage.flag}</span>
+                <span className="text-sm font-medium">{currentLanguage.name}</span>
+                <svg className={`w-4 h-4 transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isLangMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white border border-[#E5DCC8] rounded-lg shadow-xl overflow-hidden">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#F5F1E8] transition-colors ${
+                        lang.code === locale ? 'bg-[#F5F1E8] text-[#4A7BA7]' : 'text-gray-700'
+                      }`}
+                    >
+                      <span className="text-xl">{lang.flag}</span>
+                      <span className="font-medium">{lang.name}</span>
+                      {lang.code === locale && (
+                        <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,6 +140,32 @@ export default function Navigation() {
                   </li>
                 ))}
               </ul>
+
+              {/* Mobile Language Switcher */}
+              <div className="pt-4 border-t border-[#E5DCC8]">
+                <p className="text-xs text-gray-500 uppercase tracking-wider mb-3 px-4">Language</p>
+                <div className="space-y-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`w-full flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
+                        lang.code === locale
+                          ? 'bg-[#F5F1E8] text-[#4A7BA7]'
+                          : 'text-gray-700 hover:bg-[#F5F1E8] hover:text-[#4A7BA7]'
+                      }`}
+                    >
+                      <span className="text-xl">{lang.flag}</span>
+                      <span className="font-medium">{lang.name}</span>
+                      {lang.code === locale && (
+                        <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         )}

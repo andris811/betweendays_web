@@ -1,0 +1,76 @@
+{
+  "appName": "Between Days",
+  "navigation": {
+    "features": "Features",
+    "contact": "Contact",
+    "termsPrivacy": "Terms & Privacy"
+  },
+  "hero": {
+    "title": "Peace of Mind",
+    "subtitle": "For Those Who Live Alone",
+    "description": "A simple, reliable app that helps friends and family monitor each other's well-being through daily check-ins. If you miss check-ins for three consecutive days, your emergency contact is automatically notified.",
+    "downloadButton": "Download on App Store",
+    "screenshotPlaceholder": "App Screenshot Placeholder"
+  },
+  "features": {
+    "title": "Everything You Need",
+    "subtitle": "Simple, reliable features designed for peace of mind",
+    "dailyCheckIns": {
+      "title": "Daily Check-Ins",
+      "description": "Simply open the app each day to confirm you're safe. Quick, easy, and non-intrusive."
+    },
+    "automaticAlerts": {
+      "title": "Automatic Alerts",
+      "description": "If you miss check-ins for three consecutive days, your emergency contact is automatically notified."
+    },
+    "privacyFirst": {
+      "title": "Privacy First",
+      "description": "Your data stays private. No tracking, no unnecessary data collection, just peace of mind."
+    },
+    "simpleReliable": {
+      "title": "Simple & Reliable",
+      "description": "Clean interface with no distractions. Designed to be simple and dependable when it matters most."
+    },
+    "emergencyContact": {
+      "title": "Emergency Contact",
+      "description": "Set up your trusted contact who will be notified if something seems wrong."
+    },
+    "worksOffline": {
+      "title": "Works Offline",
+      "description": "Check-ins are recorded offline and synced when you're back online. Always reliable."
+    }
+  },
+  "seeItInAction": {
+    "title": "See It in Action",
+    "subtitle": "Experience the simplicity and peace of mind Between Days provides",
+    "screenshots": {
+      "dailyCheckIn": {
+        "title": "Daily Check-In",
+        "description": "Simple, one-tap check-in to let loved ones know you're safe",
+        "placeholder": "Main Screen"
+      },
+      "easyOnboarding": {
+        "title": "Easy Onboarding",
+        "description": "Get started quickly with a simple, guided setup process",
+        "placeholder": "Onboarding"
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Manage your name, emergency contact, and language preferences",
+        "placeholder": "Settings View"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions? We'd love to hear from you",
+    "supportTitle": "Support",
+    "supportDescription": "Need help? Contact our support team"
+  },
+  "footer": {
+    "contact": "Contact",
+    "termsPrivacy": "Terms & Privacy",
+    "copyright": "All rights reserved.",
+    "madeBy": "Made by"
+  }
+}

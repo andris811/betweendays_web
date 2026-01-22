@@ -1,0 +1,290 @@
+{
+  "title": "Terms of Use & Privacy Policy",
+  "lastUpdated": "Last updated: January 2026",
+  "appDescription": "is an iOS application designed to help people who live alone signal their well-being through daily check-ins. If a user does not check in for two consecutive days, the app automatically sends an email alert on the third day to a designated emergency contact asking them to check on the user.",
+  "agreeToTerms": "By using the app, you agree to the terms and practices described below.",
+  "sections": {
+    "overview": "Overview",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "childrensPrivacy": "Children's Privacy",
+    "internationalUsers": "International Users",
+    "changesToPolicy": "Changes to This Policy",
+    "yourConsent": "Your Consent",
+    "contact": "Contact",
+    "gdpr": "Legal Basis for Processing (GDPR)",
+    "ccpa": "California Privacy Rights (CCPA)"
+  },
+  "overview": {
+    "para1": "{appName} is an iOS application designed to help people who live alone signal their well-being through daily check-ins. If a user does not check in for two consecutive days, the app automatically sends an email alert on the third day to a designated emergency contact asking them to check on the user.",
+    "para2": "By using the app, you agree to the terms and practices described below."
+  },
+  "termsOfUse": {
+    "intendedUse": {
+      "title": "2.1 Intended Use",
+      "para1": "{appName} is a wellness support tool, <strong>not an emergency service</strong>. It does not replace medical care, emergency responders, or welfare checks conducted by authorities.",
+      "para2": "Do not rely on this app for life-critical situations."
+    },
+    "automatedAlerts": {
+      "title": "2.2 Automated Alerts",
+      "para1": "If you miss checking in for two consecutive days, the app automatically sends an email on the third day to your chosen emergency contact.",
+      "para2": "You acknowledge and accept:",
+      "list": [
+        "Emails are sent automatically, without human intervention",
+        "Email delivery is not guaranteed (depends on email providers, internet connectivity)",
+        "The app cannot confirm whether the recipient reads or acts on the message",
+        "False alarms may occur if you forget to check in"
+      ]
+    },
+    "accuracyOfInformation": {
+      "title": "2.3 Accuracy of Information",
+      "para1": "You are responsible for ensuring:",
+      "list": [
+        "Your correct name (optional, but recommended)",
+        "A valid and monitored emergency contact email address"
+      ],
+      "para2": "Incorrect or outdated information may prevent alerts from reaching the right person."
+    },
+    "noLiability": {
+      "title": "2.4 No Liability",
+      "para1": "{appName} is provided \"as is\" without any warranties. The developer is not liable for:",
+      "list": [
+        "Missed, delayed, or undelivered emails",
+        "Internet, device, or third-party service outages",
+        "Any action or inaction taken by emergency contacts",
+        "Consequences arising from reliance on this app"
+      ]
+    },
+    "userResponsibility": {
+      "title": "2.5 User Responsibility",
+      "para1": "You are responsible for:",
+      "list": [
+        "Checking in daily to prevent alerts",
+        "Keeping emergency contact information up to date",
+        "Informing your emergency contact that they may receive automated alerts",
+        "Understanding that this is a supplemental tool, not a replacement for professional care"
+      ]
+    }
+  },
+  "privacyPolicy": {
+    "whatDataWeCollect": {
+      "title": "3.1 What Data We Collect",
+      "para1": "{appName} collects only the minimum data necessary to function. No accounts, passwords, or social logins are required.",
+      "storedOnDevice": {
+        "title": "Stored on Device (Local Storage)",
+        "list": [
+          "Your name (optional)",
+          "Emergency contact email address",
+          "Check-in history (last 30 check-in dates)",
+          "Last check-in date and time",
+          "App language preference",
+          "Text/icon size preference",
+          "Onboarding completion status"
+        ]
+      },
+      "syncedToIcloud": {
+        "title": "Synced to iCloud",
+        "para1": "To allow data recovery when reinstalling the app or switching devices, the following data is automatically synced to your personal iCloud account:",
+        "list": [
+          "Your name",
+          "Emergency contact email address",
+          "Last check-in date",
+          "Check-in history (last 30 days)",
+          "Consecutive missed days count (calculated value)",
+          "App preferences (language, text size)"
+        ],
+        "important": "**Important:** Data is synced using iCloud Key-Value Storage, which is tied to your Apple ID. Only you can access this data across your devices. We do not have access to your iCloud data."
+      }
+    },
+    "howDataIsUsed": {
+      "title": "3.2 How Data Is Used",
+      "para1": "Your data is used <strong>exclusively</strong> for:",
+      "list": [
+        "Tracking your daily check-ins",
+        "Calculating consecutive missed days",
+        "Sending automated email alerts to your emergency contact when needed",
+        "Syncing data to your personal iCloud account for backup and recovery",
+        "Personalizing app preferences (language, text size)"
+      ],
+      "weDoNot": "We do not:",
+      "doNotList": [
+        "Sell your data to third parties",
+        "Use your data for advertising",
+        "Share your data except as described in this policy",
+        "Track your location",
+        "Access other apps or data on your device",
+        "Access your iCloud data (it's encrypted and only accessible to you)"
+      ]
+    },
+    "emailSending": {
+      "title": "3.3 Email Sending",
+      "para1": "Automated alert emails are sent via <strong>SendGrid</strong>, a third-party email service provider.",
+      "para2": "When an alert is triggered:",
+      "list": [
+        "An email is sent <strong>exclusively</strong> to your provided emergency contact",
+        "The email contains: your name (if provided), missed days count, and instructions for the recipient",
+        "Emails are marked as automated with \"DO NOT REPLY\" warnings",
+        "The email is sent from: safety@betweendays.app"
+      ],
+      "para3": "SendGrid processes the email content only for delivery purposes and does not use your data for other purposes."
+    },
+    "dataStorageAndSecurity": {
+      "title": "3.4 Data Storage and Security",
+      "localStorage": {
+        "title": "Local Storage",
+        "list": [
+          "Data is stored securely on your device using iOS UserDefaults",
+          "Protected by your device's built-in security (passcode, Face ID, etc.)",
+          "Automatically deleted when you uninstall the app"
+        ]
+      },
+      "cloudStorage": {
+        "title": "Cloud Storage (iCloud)",
+        "list": [
+          "Data is stored in your personal iCloud account (operated by Apple)",
+          "Transmitted via encrypted connections",
+          "Protected by your Apple ID password and two-factor authentication",
+          "<strong>Persists even after deleting the app</strong> (to allow data recovery)",
+          "Accessible only from devices signed in with your Apple ID"
+        ]
+      }
+    },
+    "dataRetention": {
+      "title": "3.5 Data Retention",
+      "para1": "Your data is stored in two places with different retention policies:",
+      "onYourDevice": {
+        "title": "On Your Device",
+        "list": [
+          "Data remains until you uninstall the app",
+          "Uninstalling the app <strong>permanently deletes</strong> all local data"
+        ]
+      },
+      "inIcloud": {
+        "title": "In iCloud",
+        "list": [
+          "Data <strong>persists even after deleting the app</strong>",
+          "This allows data recovery if you reinstall the app",
+          "To permanently delete data:"
+        ],
+        "steps": [
+          "Open the app",
+          "Go to Settings",
+          "Use the \"Reset All Data\" option",
+          "Then uninstall the app"
+        ],
+        "para": "If you uninstall without resetting, data will remain in iCloud and will be restored if you reinstall the app with the same Apple ID."
+      }
+    },
+    "yourRightsAndControl": {
+      "title": "3.6 Your Rights and Control",
+      "para1": "At any time, you can:",
+      "list": [
+        "<strong>View</strong> your stored information in the Settings screen",
+        "<strong>Update</strong> your name or emergency contact email",
+        "<strong>Modify</strong> app preferences (language, text size)",
+        "<strong>Stop future alerts</strong> by removing the emergency contact email",
+        "<strong>Delete all data</strong> using the \"Reset All Data\" option in Settings",
+        "<strong>Request data deletion</strong> by contacting support (see Section 8)"
+      ]
+    },
+    "thirdPartyServices": {
+      "title": "3.7 Third-Party Services",
+      "para1": "{appName} uses the following third-party services:",
+      "icloud": {
+        "title": "iCloud (Apple)",
+        "list": [
+          "Purpose: Cloud data storage and sync",
+          "Data shared: App data syncs to your personal iCloud account",
+          "Privacy policy: https://www.apple.com/legal/privacy/",
+          "Note: This is your own iCloud account - we do not have access to this data"
+        ]
+      },
+      "sendgrid": {
+        "title": "SendGrid (Twilio)",
+        "list": [
+          "Purpose: Email delivery for alerts",
+          "Data shared: Emergency contact email, your name, alert message content",
+          "Privacy policy: https://www.twilio.com/legal/privacy"
+        ]
+      },
+      "para2": "These services are bound by their own privacy policies. We choose trusted providers with strong privacy practices."
+    },
+    "dataSharingAndDisclosure": {
+      "title": "3.8 Data Sharing and Disclosure",
+      "para1": "We do not sell or rent your data to third parties.",
+      "para2": "We may only disclose your information:",
+      "list": [
+        "To your designated emergency contact (as part of the alert email)",
+        "To third-party service providers (SendGrid) to the extent necessary to deliver email alerts",
+        "When required by legal process or statutory obligation",
+        "To protect rights, property, or safety"
+      ],
+      "para3": "Note: Your iCloud data is stored in your personal iCloud account and is not shared with us or third parties."
+    }
+  },
+  "childrensPrivacy": {
+    "para1": "{appName} is not intended for users under 13 years old. We do not knowingly collect personal information from children under 13.",
+    "para2": "If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately so we can delete it."
+  },
+  "internationalUsers": {
+    "para1": "Your iCloud data is stored in Apple data centers, which may be located in different countries depending on your region and Apple ID settings. SendGrid's email service operates in the United States.",
+    "para2": "By using the app, you consent to the processing of data as described in this policy. These countries may have different data protection laws than your country of residence.",
+    "chinaNote": "**For users in China:** iCloud data is stored in Apple's data centers in China, operated by GCBD (Guizhou on the Cloud Big Data), in accordance with Chinese data protection regulations."
+  },
+  "changesToPolicy": {
+    "para1": "We may update these Terms of Use and Privacy Policy from time to time. Changes will be indicated by updating the \"Last updated\" date at the top of this page.",
+    "para2": "Your continued use of the app after changes constitutes acceptance of the updated terms.",
+    "para3": "If significant changes affect your privacy rights, we will provide notice within the app when possible."
+  },
+  "yourConsent": {
+    "para1": "By downloading, installing, and using {appName}, you consent to:",
+    "list": [
+      "The collection and use of data as described in this policy",
+      "Sending automated alerts to your emergency contact",
+      "Storing data in your personal iCloud account",
+      "The terms and limitations described in Section 2"
+    ]
+  },
+  "contact": {
+    "para1": "If you have questions, concerns, or requests regarding these terms or privacy practices, please contact:",
+    "support": {
+      "title": "{appName} Support",
+      "email": "Email: "
+    },
+    "para2": "For data deletion requests, you can delete all data directly from the app:",
+    "steps": [
+      "Open Settings",
+      "Scroll to the \"Data\" section",
+      "Tap \"Reset All Data\""
+    ],
+    "para3": "This will delete both local and iCloud data. We will respond to privacy inquiries within 30 days."
+  },
+  "gdpr": {
+    "para1": "If you are located in the European Economic Area (EEA), our legal basis for collecting and using your data is:",
+    "list": [
+      "<strong>Consent:</strong> You provide explicit consent by setting up an emergency contact",
+      "<strong>Legitimate interest:</strong> Operating the core functionality of the app (check-in tracking)"
+    ],
+    "para2": "You have the right to:",
+    "rights": [
+      "Access your personal data",
+      "Correct inaccurate data",
+      "Delete your data (\"right to be forgotten\")",
+      "Restrict or object to processing",
+      "Data portability",
+      "Withdraw consent at any time"
+    ],
+    "para3": "To exercise these rights, contact us at avdev2024@gmail.com."
+  },
+  "ccpa": {
+    "para1": "If you are a California resident, you have the right to:",
+    "list": [
+      "Know what personal information we collect and how we use it",
+      "Request deletion of your personal information",
+      "Opt-out of the sale of personal information (we do not sell your data)",
+      "Exercise your privacy rights without discrimination"
+    ],
+    "para3": "To exercise these rights, contact us at avdev2024@gmail.com."
+  },
+  "finalNote": "By using {appName}, you acknowledge that you have read and understood this Privacy Policy and Terms of Use."
+}

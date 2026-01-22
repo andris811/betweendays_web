@@ -1,0 +1,76 @@
+{
+  "appName": "Napról napra",
+  "navigation": {
+    "features": "Funkciók",
+    "contact": "Kapcsolat",
+    "termsPrivacy": "Feltételek és Adatvédelem"
+  },
+  "hero": {
+    "title": "Nyugalom",
+    "subtitle": "Egyedül élőknek",
+    "description": "Egy egyszerű, megbízható alkalmazás, amely segít a barátoknak és családtagoknak nyomon követni egymás jólétét napi bejelentkezéseken keresztül. Ha három egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan értesíti a vészhelyzeti kapcsolatot.",
+    "downloadButton": "Letöltés az App Store-ból",
+    "screenshotPlaceholder": "Alkalmazás képernyőképe"
+  },
+  "features": {
+    "title": "Minden, amire szüksége van",
+    "subtitle": "Egyszerű, megbízható funkciók a nyugalmáért",
+    "dailyCheckIns": {
+      "title": "Napi bejelentkezés",
+      "description": "Egyszerűen nyissa meg az alkalmazást minden nap, hogy megerősítse biztonságát. Gyors, egyszerű és nem tolakodó."
+    },
+    "automaticAlerts": {
+      "title": "Automatikus értesítések",
+      "description": "Ha három egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan értesíti a vészhelyzeti kapcsolatot."
+    },
+    "privacyFirst": {
+      "title": "Adatvédelem az első",
+      "description": "Az adatai privátak maradnak. Nincs követés, nincs szükségtelen adatgyűjtés, csak nyugalom."
+    },
+    "simpleReliable": {
+      "title": "Egyszerű és megbízható",
+      "description": "Tiszta felület figyelemelterelés nélkül. Egyszerűnek és megbízhatónak tervezve, amikor az a legfontosabb."
+    },
+    "emergencyContact": {
+      "title": "Vészhelyzeti kapcsolat",
+      "description": "Állítsa be megbízható kapcsolatát, aki értesítést kap, ha valami nem stimmel."
+    },
+    "worksOffline": {
+      "title": "Offline is működik",
+      "description": "A bejelentkezések offline módban is rögzítésre kerülnek, és szinkronizálódnak, amikor újra online van. Mindig megbízható."
+    }
+  },
+  "seeItInAction": {
+    "title": "Működés közben",
+    "subtitle": "Tapasztalja meg az egyszerűséget és nyugalmat, amit a Between Days nyújt",
+    "screenshots": {
+      "dailyCheckIn": {
+        "title": "Napi bejelentkezés",
+        "description": "Egyszerű, egy érintéses bejelentkezés, hogy szerettei tudják, biztonságban van",
+        "placeholder": "Főképernyő"
+      },
+      "easyOnboarding": {
+        "title": "Könnyű kezdés",
+        "description": "Kezdjen el gyorsan egyszerű, irányított beállítási folyamattal",
+        "placeholder": "Bevezetés"
+      },
+      "settings": {
+        "title": "Beállítások",
+        "description": "Kezelje nevét, vészhelyzeti kapcsolatát és nyelvi beállításait",
+        "placeholder": "Beállítások nézet"
+      }
+    }
+  },
+  "contact": {
+    "title": "Vegye fel velünk a kapcsolatot",
+    "subtitle": "Kérdése van? Szívesen hallanánk Öntől",
+    "supportTitle": "Támogatás",
+    "supportDescription": "Segítségre van szüksége? Vegye fel a kapcsolatot támogatási csapatunkkal"
+  },
+  "footer": {
+    "contact": "Kapcsolat",
+    "termsPrivacy": "Feltételek és Adatvédelem",
+    "copyright": "Minden jog fenntartva.",
+    "madeBy": "Készítette"
+  }
+}

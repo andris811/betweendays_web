@@ -1,21 +1,26 @@
+'use client';
+
 import ScrollAnimation from './ScrollAnimation';
+import { useTranslations } from 'next-intl';
 
 export default function SeeItInAction() {
+  const t = useTranslations('seeItInAction');
+
   const screenshots = [
     {
-      title: 'Daily Check-In',
-      description: 'Simple, one-tap check-in to let loved ones know you\'re safe',
-      placeholder: 'Main Screen'
+      title: t('screenshots.dailyCheckIn.title'),
+      description: t('screenshots.dailyCheckIn.description'),
+      placeholder: t('screenshots.dailyCheckIn.placeholder')
     },
     {
-      title: 'Easy Onboarding',
-      description: 'Get started quickly with a simple, guided setup process',
-      placeholder: 'Onboarding'
+      title: t('screenshots.easyOnboarding.title'),
+      description: t('screenshots.easyOnboarding.description'),
+      placeholder: t('screenshots.easyOnboarding.placeholder')
     },
     {
-      title: 'Settings',
-      description: 'Manage your name, emergency contact, and language preferences',
-      placeholder: 'Settings View'
+      title: t('screenshots.settings.title'),
+      description: t('screenshots.settings.description'),
+      placeholder: t('screenshots.settings.placeholder')
     }
   ];
 
@@ -25,10 +30,10 @@ export default function SeeItInAction() {
         <ScrollAnimation>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              See It in Action
+              {t('title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experience the simplicity and peace of mind Between Days provides
+              {t('subtitle')}
             </p>
           </div>
         </ScrollAnimation>

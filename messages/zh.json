@@ -1,0 +1,76 @@
+{
+  "appName": "平安日报",
+  "navigation": {
+    "features": "功能特点",
+    "contact": "联系我们",
+    "termsPrivacy": "条款与隐私"
+  },
+  "hero": {
+    "title": "内心的安宁",
+    "subtitle": "为独居者而设计",
+    "description": "一款简单可靠的应用，通过每日签到帮助亲友监测彼此的安全状况。如果您连续三天未签到，您的紧急联系人将自动收到通知。",
+    "downloadButton": "在App Store下载",
+    "screenshotPlaceholder": "应用截图占位符"
+  },
+  "features": {
+    "title": "一切您所需要的",
+    "subtitle": "简单可靠的功能设计，让您安心无忧",
+    "dailyCheckIns": {
+      "title": "每日签到",
+      "description": "每天只需打开应用即可确认您的安全。快速、简单、无干扰。"
+    },
+    "automaticAlerts": {
+      "title": "自动提醒",
+      "description": "如果您连续三天未签到，您的紧急联系人将自动收到通知。"
+    },
+    "privacyFirst": {
+      "title": "隐私优先",
+      "description": "您的数据保持私密。无跟踪，无不必要的数据收集，只有内心的安宁。"
+    },
+    "simpleReliable": {
+      "title": "简单可靠",
+      "description": "简洁的界面，没有干扰。在最关键的时刻设计得简单可靠。"
+    },
+    "emergencyContact": {
+      "title": "紧急联系人",
+      "description": "设置您信任的联系人，当出现问题时将通知他们。"
+    },
+    "worksOffline": {
+      "title": "离线可用",
+      "description": "离线时记录签到，恢复网络后自动同步。始终可靠。"
+    }
+  },
+  "seeItInAction": {
+    "title": "实际体验",
+    "subtitle": "体验Between Days带来的简单与安心",
+    "screenshots": {
+      "dailyCheckIn": {
+        "title": "每日签到",
+        "description": "简单的一键签到，让您所爱的人知道您很安全",
+        "placeholder": "主屏幕"
+      },
+      "easyOnboarding": {
+        "title": "轻松上手",
+        "description": "通过简单的引导设置流程快速开始",
+        "placeholder": "引导页"
+      },
+      "settings": {
+        "title": "设置",
+        "description": "管理您的姓名、紧急联系人和语言偏好",
+        "placeholder": "设置视图"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有疑问吗？我们很乐意听到您的声音",
+    "supportTitle": "技术支持",
+    "supportDescription": "需要帮助？联系我们的支持团队"
+  },
+  "footer": {
+    "contact": "联系我们",
+    "termsPrivacy": "条款与隐私",
+    "copyright": "保留所有权利。",
+    "madeBy": "制作者"
+  }
+}

@@ -128,8 +128,12 @@
       ],
       "para3": "A SendGrid csak a kézbesítés céljából dolgozza fel az e-mail tartalmat, és nem használja az adatait más célokra."
     },
+    "pushNotifications": {
+      "title": "3.4 Push értesítések",
+      "para1": "Az alkalmazás push értesítéseket küldhet, hogy emlékeztesse Önt a bejelentkezésre. Ezek az Ön engedélyét igénylik, és az eszköz beállításaiban kezelhetők. Ez a funkció nem gyűjt személyes adatokat."
+    },
     "dataStorageAndSecurity": {
-      "title": "3.4 Adattárolás és biztonság",
+      "title": "3.5 Adattárolás és biztonság",
       "localStorage": {
         "title": "Helyi tárolás",
         "list": [
@@ -150,7 +154,7 @@
       }
     },
     "dataRetention": {
-      "title": "3.5 Adatmegőrzés",
+      "title": "3.6 Adatmegőrzés",
       "para1": "Az Ön adatai két helyen tárolódnak, különböző megőrzési irányelvekkel:",
       "onYourDevice": {
         "title": "Az Ön eszközén",
@@ -177,7 +181,7 @@
       
     },
     "yourRightsAndControl": {
-      "title": "3.6 Az Ön jogai és ellenőrzése",
+      "title": "3.7 Az Ön jogai és ellenőrzése",
       "para1": "Bármikor:",
       "list": [
         "<strong>Megtekintheti</strong> a tárolt információit a Beállítások képernyőn",
@@ -189,7 +193,7 @@
       ]
     },
     "thirdPartyServices": {
-      "title": "3.7 Harmadik fél szolgáltatások",
+      "title": "3.8 Harmadik fél szolgáltatások",
       "para1": "A {appName} a következő harmadik fél szolgáltatásokat használja:",
       "icloud": {
         "title": "iCloud (Apple)",
@@ -211,7 +215,7 @@
       "para2": "Ezeket a szolgáltatásokat saját adatvédelmi irányelveik kötik. Megbízható szolgáltatókat választunk erős adatvédelmi gyakorlatokkal."
     },
     "dataSharingAndDisclosure": {
-      "title": "3.8 Adatmegosztás és nyilvánosságra hozatal",
+      "title": "3.9 Adatmegosztás és nyilvánosságra hozatal",
       "para1": "Nem adjuk el vagy adjuk bérbe az adatait harmadik feleknek.",
       "para2": "Csak a következő esetekben hozhatjuk nyilvánosságra az információit:",
       "list": [

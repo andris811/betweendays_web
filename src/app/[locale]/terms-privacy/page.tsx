@@ -182,13 +182,20 @@ export default function TermsPrivacyPage() {
                 </li>
               ))}
             </ul>
-            <p>
-              {tTerms('privacyPolicy.emailSending.para3')}
-            </p>
+             <p>
+               {tTerms('privacyPolicy.emailSending.para3')}
+             </p>
 
-            <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-              {tTerms('privacyPolicy.dataStorageAndSecurity.title')}
-            </h3>
+             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+               {tTerms('privacyPolicy.pushNotifications.title')}
+             </h3>
+             <p>
+               {tTerms('privacyPolicy.pushNotifications.para1')}
+             </p>
+
+             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+               {tTerms('privacyPolicy.dataStorageAndSecurity.title')}
+             </h3>
 
             <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
               {tTerms('privacyPolicy.dataStorageAndSecurity.localStorage.title')}

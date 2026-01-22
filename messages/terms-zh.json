@@ -128,8 +128,12 @@
       ],
       "para3": "SendGrid仅处理电子邮件内容以进行发送，不会将您的数据用于其他目的。"
     },
+    "pushNotifications": {
+      "title": "3.4 推送通知",
+      "para1": "应用程序可能会发送推送通知来提醒您签到。这些需要您的许可，可以在设备设置中管理。此功能不会收集个人数据。"
+    },
     "dataStorageAndSecurity": {
-      "title": "3.4 数据存储和安全",
+      "title": "3.5 数据存储和安全",
       "localStorage": {
         "title": "本地存储",
         "list": [
@@ -150,7 +154,7 @@
       }
     },
     "dataRetention": {
-      "title": "3.5 数据保留",
+      "title": "3.6 数据保留",
       "para1": "您的数据存储在两个位置，具有不同的保留策略：",
       "onYourDevice": {
         "title": "在您的设备上",
@@ -176,7 +180,7 @@
       }
     },
     "yourRightsAndControl": {
-      "title": "3.6 您的权利和控制",
+      "title": "3.7 您的权利和控制",
       "para1": "您可以随时：",
       "list": [
         "<strong>查看</strong>您在设置屏幕中存储的信息",
@@ -188,7 +192,7 @@
       ]
     },
     "thirdPartyServices": {
-      "title": "3.7 第三方服务",
+      "title": "3.8 第三方服务",
       "para1": "{appName}使用以下第三方服务：",
       "icloud": {
         "title": "iCloud（Apple）",
@@ -210,7 +214,7 @@
       "para2": "这些服务受其自己的隐私政策约束。我们选择具有强大隐私实践的可信提供商。"
     },
     "dataSharingAndDisclosure": {
-      "title": "3.8 数据共享和披露",
+      "title": "3.9 数据共享和披露",
       "para1": "我们不会向第三方出售或出租您的数据。",
       "para2": "我们只会在以下情况下披露您的信息：",
       "list": [

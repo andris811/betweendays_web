@@ -128,8 +128,12 @@
       ],
       "para3": "SendGrid processes the email content only for delivery purposes and does not use your data for other purposes."
     },
+    "pushNotifications": {
+      "title": "3.4 Push Notifications",
+      "para1": "The app may send push notifications to remind you to check in. These require your permission and can be managed in your device settings. No personal data is collected for this feature."
+    },
     "dataStorageAndSecurity": {
-      "title": "3.4 Data Storage and Security",
+      "title": "3.5 Data Storage and Security",
       "localStorage": {
         "title": "Local Storage",
         "list": [
@@ -150,7 +154,7 @@
       }
     },
     "dataRetention": {
-      "title": "3.5 Data Retention",
+      "title": "3.6 Data Retention",
       "para1": "Your data is stored in two places with different retention policies:",
       "onYourDevice": {
         "title": "On Your Device",
@@ -176,7 +180,7 @@
       }
     },
     "yourRightsAndControl": {
-      "title": "3.6 Your Rights and Control",
+      "title": "3.7 Your Rights and Control",
       "para1": "At any time, you can:",
       "list": [
         "<strong>View</strong> your stored information in the Settings screen",
@@ -188,7 +192,7 @@
       ]
     },
     "thirdPartyServices": {
-      "title": "3.7 Third-Party Services",
+      "title": "3.8 Third-Party Services",
       "para1": "{appName} uses the following third-party services:",
       "icloud": {
         "title": "iCloud (Apple)",
@@ -210,7 +214,7 @@
       "para2": "These services are bound by their own privacy policies. We choose trusted providers with strong privacy practices."
     },
     "dataSharingAndDisclosure": {
-      "title": "3.8 Data Sharing and Disclosure",
+      "title": "3.9 Data Sharing and Disclosure",
       "para1": "We do not sell or rent your data to third parties.",
       "para2": "We may only disclose your information:",
       "list": [

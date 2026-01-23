@@ -40,7 +40,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-20 sm:py-24 lg:py-32 bg-[#F5F1E8] border-t border-[#E5DCC8]">
+    <section id="features" className="py-20 sm:py-24 lg:py-32 bg-[#fffcf7] border-t border-[#E5DCC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation>
           <div className="text-center mb-16">

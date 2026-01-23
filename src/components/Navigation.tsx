@@ -35,7 +35,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5DCC8]">
+    <nav className="sticky top-0 z-50 bg-[#fdf6eb]/98 backdrop-blur-md border-b border-[#E5DCC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -69,7 +69,7 @@ export default function Navigation() {
             <div className="relative">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-[#4A7BA7] transition-colors rounded-md hover:bg-[#F5F1E8]"
+                className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-[#4A7BA7] transition-colors rounded-md hover:bg-[#f5efe3]"
                 aria-label="Change language"
               >
                 <span className="text-xl">{currentLanguage.flag}</span>
@@ -85,8 +85,8 @@ export default function Navigation() {
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#F5F1E8] transition-colors ${
-                        lang.code === locale ? 'bg-[#F5F1E8] text-[#4A7BA7]' : 'text-gray-700'
+                      className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#f5efe3] transition-colors ${
+                        lang.code === locale ? 'bg-[#f5efe3] text-[#4A7BA7]' : 'text-gray-700'
                       }`}
                     >
                       <span className="text-xl">{lang.flag}</span>
@@ -132,7 +132,7 @@ export default function Navigation() {
                   <li key={item.href}>
                     <a
                       href={item.href}
-                      className="block text-gray-700 hover:text-[#4A7BA7] hover:bg-[#F5F1E8] transition-all px-4 py-2 rounded-md text-base font-medium"
+                      className="block text-gray-700 hover:text-[#4A7BA7] hover:bg-[#f5efe3] transition-all px-4 py-2 rounded-md text-base font-medium"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
@@ -151,8 +151,8 @@ export default function Navigation() {
                       onClick={() => handleLanguageChange(lang.code)}
                       className={`w-full flex items-center gap-3 px-4 py-2 rounded-md transition-all ${
                         lang.code === locale
-                          ? 'bg-[#F5F1E8] text-[#4A7BA7]'
-                          : 'text-gray-700 hover:bg-[#F5F1E8] hover:text-[#4A7BA7]'
+                          ? 'bg-[#f5efe3] text-[#4A7BA7]'
+                          : 'text-gray-700 hover:bg-[#f5efe3] hover:text-[#4A7BA7]'
                       }`}
                     >
                       <span className="text-xl">{lang.flag}</span>

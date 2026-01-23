@@ -1,13 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Hero() {
   const t = useTranslations('hero');
 
   return (
-    <section className="relative bg-gradient-to-br from-[#FBF8F3] via-[#F5F1E8] to-[#EFE9DD] text-gray-900 overflow-hidden border-b border-[#E5DCC8]">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxMDcsMTU0LDE5NiwwLjA4KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+    <section className="relative bg-[#fdf6eb] text-gray-900 overflow-hidden border-b border-[#E5DCC8]">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="opacity-0 animate-fade-in-left">
@@ -31,15 +31,15 @@ export default function Hero() {
             </a>
           </div>
           <div className="opacity-0 animate-fade-in-right flex justify-center lg:justify-end">
-            <div className="bg-gray-900 p-2 rounded-[2.75rem] shadow-2xl w-full max-w-[280px] sm:max-w-[320px]">
-              <div className="aspect-[1290/2796] rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#6B9AC4] to-[#4A7BA7] flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <svg className="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-sm opacity-75">{t('screenshotPlaceholder')}</p>
-                </div>
-              </div>
+            <div className="relative w-full max-w-[320px] sm:max-w-[400px]">
+              <Image
+                src="/appIcon.png"
+                alt={t('title')}
+                width={400}
+                height={400}
+                className="w-full h-auto rounded-[3rem] opacity-90"
+                priority
+              />
             </div>
           </div>
         </div>

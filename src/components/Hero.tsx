@@ -19,7 +19,7 @@ export default function Hero() {
               {t('description')}
             </p>
             <a
-              href="https://apps.apple.com"
+              href="https://apps.apple.com/hu/app/between-days/id6757996962"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#4A7BA7] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#3d6a8f] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"

@@ -8,7 +8,7 @@
   "hero": {
     "title": "Nyugalom",
     "subtitle": "Egyedül élőknek",
-    "description": "Egy egyszerű, megbízható alkalmazás, amely segít a barátoknak és családtagoknak nyomon követni egymás jólétét napi bejelentkezéseken keresztül. Ha három egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan értesíti a vészhelyzeti kapcsolatot.",
+    "description": "Egy egyszerű, megbízható alkalmazás, amely segít a barátoknak és családtagoknak nyomon követni egymás jólétét napi bejelentkezéseken keresztül. Ha két egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan értesíti a vészhelyzeti kapcsolatot.",
     "downloadButton": "Letöltés az App Store-ból",
     "screenshotPlaceholder": "Alkalmazás képernyőképe"
   },
@@ -21,7 +21,7 @@
     },
     "automaticAlerts": {
       "title": "Automatikus értesítések",
-      "description": "Ha három egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan értesíti a vészhelyzeti kapcsolatot."
+      "description": "Ha két egymást követő napig lemarad a bejelentkezésről, a vészhelyzeti kapcsolat automatikusan értesítést kap a harmadik napon."
     },
     "privacyFirst": {
       "title": "Adatvédelem az első",

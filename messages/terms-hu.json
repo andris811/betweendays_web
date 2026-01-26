@@ -30,7 +30,7 @@
       "para1": "Ha két egymást követő napig lemarad a bejelentkezésről, az alkalmazás automatikusan küld egy e-mailt a harmadik napon a kiválasztott vészhelyzeti kapcsolattartónak.",
       "para2": "Ön elismeri és elfogadja:",
       "list": [
-        "Az e-maileket automatikusan küldik, emberi beavatkozás nélkül",
+        "Az e-maileket szerverünkön keresztül automatikusan küldik, emberi beavatkozás nélkül",
         "Az e-mail kézbesítése nem garantálható (függ az e-mail szolgáltatóktól, internetkapcsolattól)",
         "Az alkalmazás nem tudja megerősíteni, hogy a címzett elolvassa vagy cselekszik az üzenetre",
         "Hamis riasztások fordulhatnak elő, ha elfelejti bejelentkezni"
@@ -84,16 +84,25 @@
       },
       "syncedToIcloud": {
         "title": "Szinkronizálva az iCloud-ba",
-        "para1": "Az alkalmazás újratelepítése vagy eszközváltás esetén az adatok helyreállításának engedélyezése érdekében a következő adatok automatikusan szinkronizálódnak az Ön személyes iCloud fiókjába:",
+        "para1": "Az alkalmazás újratelepítése vagy eszközváltás esetén az adatok helyreállításának engedélyezése érdekében a következő adatok az iCloud Key-Value Storage használatával automatikusan szinkronizálódnak az Ön személyes iCloud fiókjába:",
         "list": [
-          "Az Ön neve",
+          "Az Ön neve (ha megadta)",
           "Vészhelyzeti kapcsolattartó e-mail cím",
-          "Utolsó bejelentkezés dátuma",
+          "Utolsó bejelentkezés dátuma és ideje",
           "Bejelentkezési előzmények (utolsó 30 nap)",
           "Egymást követő kihagyott napok száma (kiszámított érték)",
           "Alkalmazás beállításai (nyelv, szöveg mérete)"
+        ]
+      },
+      "syncedToCloudkit": {
+        "title": "Szinkronizálva a CloudKit-re is",
+        "para1": "További biztonsági mentési mechanizmusként az adatok szinkronizálódnak az Ön privát CloudKit adatbázisába is:",
+        "list": [
+          "Eszközazonosító (névtelen UUID, nem kapcsolódik az Apple ID-hoz)",
+          "Minden fenti, \"Szinkronizálva az iCloud-ba\" listában szereplő adat",
+          "Szinkronizálási időbélyeg"
         ],
-        "important": "**Fontos:** Az adatok iCloud Key-Value Storage használatával szinkronizálódnak, amely az Apple ID-hoz kötött. Csak Ön férhet hozzá ezekhez az adatokhoz az eszközei között. Mi nem férünk hozzá az Ön iCloud adataihoz."
+        "important": "**Fontos:** Mind az iCloud Key-Value Storage, mind a CloudKit adatok az Apple ID-hoz kötöttek. Csak Ön férhet hozzá ezekhez az adatokhoz az eszközei között. Mi nem férünk hozzá az Ön iCloud vagy CloudKit adataihoz. Az adatai az Apple biztonságos infrastruktúrájában tárolódnak."
       }
     },
     "howDataIsUsed": {
@@ -103,7 +112,7 @@
         "Napi bejelentkezéseinek nyomon követése",
         "Egymást követő kihagyott napok kiszámítása",
         "Szükség esetén automatizált e-mail riasztások küldése a vészhelyzeti kapcsolattartónak",
-        "Adatok szinkronizálása az Ön személyes iCloud fiókjába biztonsági mentés és helyreállítás céljából",
+        "Adatok szinkronizálása az Ön személyes iCloud fiókjába biztonsági mentés és eszközök közötti helyreállítás céljából",
         "Alkalmazás beállításainak személyre szabása (nyelv, szöveg mérete)"
       ],
       "weDoNot": "Nem:",
@@ -117,16 +126,23 @@
       ]
     },
     "emailSending": {
-      "title": "3.3 E-mail küldés",
-      "para1": "Az automatizált riasztási e-maileket a <strong>SendGrid</strong>, egy harmadik fél e-mail szolgáltatóján keresztül küldjük.",
-      "para2": "Riasztás aktiválásakor:",
-      "list": [
-        "Egy e-mailt <strong>kizárólag</strong> az Ön megadott vészhelyzeti kapcsolattartójának küldünk",
-        "Az e-mail tartalmazza: az Ön nevét (ha megadta), a kihagyott napok számát és utasításokat a címzett számára",
-        "Az e-maileket automatizáltként jelöljük \"NE VÁLASZOLJ\" figyelmeztetésekkel",
-        "Az e-mailt a következő címről küldjük: safety@betweendays.app"
+      "title": "3.3 E-mail küldési szolgáltatás",
+      "para1": "Az automatizált riasztási e-maileket a SendGrid (egy harmadik fél e-mail szolgáltató) küldi a háttérszerverünkön keresztül.",
+      "para2": "<strong>Működési elv:</strong>",
+      "howItWorks": [
+        "Amikor az alkalmazás észleli, hogy 2+ egymást követő napot kihagyott, eszkalációs kérést küld a szerverünknek",
+        "A szerverünk (Railway-en üzemeltetett) feldolgozza a kérést és e-mailt küld a SendGrid-en keresztül",
+        "Az e-mail kizárólag az Ön megadott vészhelyzeti kapcsolattartójának kerül elküldésre"
       ],
-      "para3": "A SendGrid csak a kézbesítés céljából dolgozza fel az e-mail tartalmat, és nem használja az adatait más célokra."
+      "para3": "<strong>E-mail tartalma:</strong>",
+      "list": [
+        "Az Ön neve (ha megadta)",
+        "Egymást követő kihagyott napok száma",
+        "Utasítások a címzett számára",
+        "Automatizált \"NE VÁLASZOLJ\" figyelmeztetések",
+        "Küldő: safety@betweendays.app"
+      ],
+      "para4": "A SendGrid csak a kézbesítés céljából dolgozza fel az e-mail tartalmat, és nem használja az adatait más célokra."
     },
     "pushNotifications": {
       "title": "3.4 Push értesítések",
@@ -143,19 +159,29 @@
         ]
       },
       "cloudStorage": {
-        "title": "Felhő tárolás (iCloud)",
+        "title": "iCloud tárolás (Key-Value Storage és CloudKit)",
         "list": [
           "Az adatok az Ön személyes iCloud fiókjában tárolódnak (Apple által üzemeltetett)",
           "Titkosított kapcsolatokon keresztül kerülnek továbbításra",
           "Az Apple ID jelszó és kétfaktoros hitelesítés védi",
           "<strong>Az alkalmazás törlése után is fennmarad</strong> (az adatok helyreállításának lehetővé tétele érdekében)",
-          "Csak az Apple ID-val bejelentkezett eszközökről érhető el"
+          "Csak az Apple ID-val bejelentkezett eszközökről érhető el",
+          "Az Apple biztonságos adatközpontjaiban tárolódik"
+        ]
+      },
+      "backendServer": {
+        "title": "Háttérszerver (Railway)",
+        "list": [
+          "A Railway biztonságos infrastruktúráján üzemeltetett",
+          "Nem tárolja tartósan az Ön személyes adatait",
+          "Csak valós időben dolgozza fel az eszkalációs e-mail kéréseket",
+          "Biztonságos API-n keresztül kommunikál a SendGrid-del az e-mail kézbesítéshez"
         ]
       }
     },
     "dataRetention": {
       "title": "3.6 Adatmegőrzés",
-      "para1": "Az Ön adatai két helyen tárolódnak, különböző megőrzési irányelvekkel:",
+      "para1": "Az Ön adatai több helyen tárolódnak, különböző megőrzési irányelvekkel:",
       "onYourDevice": {
         "title": "Az Ön eszközén",
         "list": [
@@ -164,19 +190,30 @@
         ]
       },
       "inIcloud": {
-        "title": "Az iCloud-ban",
+        "title": "Az iCloud-ban (Key-Value Storage és CloudKit)",
         "list": [
           "Az adatok <strong>az alkalmazás törlése után is fennmaradnak</strong>",
           "Ez lehetővé teszi az adatok helyreállítását, ha újratelepíti az alkalmazást",
-          "Az adatok végleges törléséhez:"
-        ],
+          "Szinkronizálva van az összes eszközén, amely ugyanazzal az Apple ID-val van bejelentkezve"
+        ]
+      },
+      "onRailwayServer": {
+        "title": "A Railway szerveren",
+        "list": [
+          "Nincs tartós adattárolás",
+          "Az eszkalációs kéréseket valós időben dolgozzuk fel és nem őrizzük meg"
+        ]
+      },
+      "toPermanentlyDelete": {
+        "title": "Az összes adat végleges törléséhez:",
         "steps": [
           "Nyissa meg az alkalmazást",
           "Menjen a Beállításokba",
           "Használja az \"Összes adat visszaállítása\" opciót",
           "Ezután távolítsa el az alkalmazást"
         ],
-        "para": "Ha csak eltávolítja anélkül, hogy visszaállítaná, az adatok az iCloud-ban maradnak, és visszaállnak, ha újratelepíti az alkalmazást ugyanazon Apple ID-val."
+        "para1": "Ha csak eltávolítja anélkül, hogy visszaállítaná, az adatok az iCloud-ban maradnak, és visszaállnak, ha újratelepíti az alkalmazást ugyanazon Apple ID-val.",
+        "para2": "<strong>Megjegyzés:</strong> Az iCloud adatokat az Apple kezeli. Az alkalmazásból történő adattörlés eltávolítja azokat az iCloud Key-Value Storage-ből és a CloudKit-ből, de az Apple megtarthatja a biztonsági másolatokat adatmegőrzési irányelveik szerint."
       }
       
     },
@@ -189,7 +226,7 @@
         "<strong>Módosíthatja</strong> az alkalmazás beállításait (nyelv, szöveg mérete)",
         "<strong>Leállíthatja a jövőbeli riasztásokat</strong> a vészhelyzeti kapcsolattartó e-mail cím eltávolításával",
         "<strong>Törölheti az összes adatot</strong> a \"Összes adat visszaállítása\" opcióval a Beállításokban",
-        "<strong>Kérheti az adatok törlését</strong> a támogatással való kapcsolatfelvétellel (lásd 6. szakasz)"
+        "<strong>Kérheti az adattörlési segítséget</strong> a támogatással való kapcsolatfelvétellel (lásd 8. szakasz)"
       ]
     },
     "thirdPartyServices": {
@@ -198,10 +235,19 @@
       "icloud": {
         "title": "iCloud (Apple)",
         "list": [
-          "Cél: Felhő adattárolás és szinkronizálás",
-          "Megosztott adatok: Az alkalmazás adatai szinkronizálódnak az Ön személyes iCloud fiókjába",
+          "Cél: Felhő adattárolás és szinkronizálás biztonsági mentéshez és eszközök közötti szinkronizáláshoz",
+          "Megosztott adatok: Az alkalmazás adatai a Key-Value Storage és CloudKit használatával szinkronizálódnak az Ön személyes iCloud fiókjába",
           "Adatvédelmi irányelvek: https://www.apple.com/legal/privacy/",
           "Megjegyzés: Ez az Ön saját iCloud fiókja - mi nem férünk hozzá ezekhez az adatokhoz"
+        ]
+      },
+      "railway": {
+        "title": "Railway",
+        "list": [
+          "Cél: Háttérszerver tárhely az eszkalációs e-mail kérések feldolgozásához",
+          "Megosztott adatok: E-mail cím, név, kihagyott napok száma (csak eszkaláció indításakor)",
+          "Adatmegőrzés: Nincs tartós tárolás - csak valós idejű feldolgozás",
+          "Adatvédelmi irányelvek: https://railway.app/legal/privacy"
         ]
       },
       "sendgrid": {
@@ -212,7 +258,7 @@
           "Adatvédelmi irányelvek: https://www.twilio.com/legal/privacy"
         ]
       },
-      "para2": "Ezeket a szolgáltatásokat saját adatvédelmi irányelveik kötik. Megbízható szolgáltatókat választunk erős adatvédelmi gyakorlatokkal."
+      "para2": "Ezeket a szolgáltatásokat saját adatvédelmi irányelveik kötik. Megbízható szolgáltatókat választunk erős adatvédelmi gyakorlatokkal és vállalati szintű biztonsággal."
     },
     "dataSharingAndDisclosure": {
       "title": "3.9 Adatmegosztás és nyilvánosságra hozatal",
@@ -220,11 +266,11 @@
       "para2": "Csak a következő esetekben hozhatjuk nyilvánosságra az információit:",
       "list": [
         "Az Ön kijelölt vészhelyzeti kapcsolattartójának (a riasztási e-mail részeként)",
-        "Harmadik fél szolgáltatóknak (SendGrid) az e-mail riasztások kézbesítéséhez szükséges mértékben",
+        "Harmadik fél szolgáltatóknak (Railway, SendGrid) az e-mail riasztások kézbesítéséhez szükséges mértékben",
         "Ha jogi eljárás vagy törvényi kötelezettség indokolja",
         "A jogok, tulajdon vagy biztonság védelme érdekében"
       ],
-      "para3": "Megjegyzés: Az Ön iCloud adatai az Ön személyes iCloud fiókjában tárolódnak, és nem kerülnek megosztásra velünk vagy harmadik felekkel."
+      "para3": "<strong>Megjegyzés:</strong> Az Ön iCloud adatai az Ön személyes iCloud fiókjában tárolódnak, és nem kerülnek megosztásra velünk vagy harmadik felekkel."
     }
   },
   "childrensPrivacy": {
@@ -234,9 +280,9 @@
   },
   "internationalUsers": {
     "title": "5. Nemzetközi felhasználók",
-    "para1": "Az Ön iCloud adatai Apple adatközpontjaiban tárolódnak, amelyek különböző országokban lehetnek az Ön régiójától és Apple ID beállításaitól függően. A SendGrid e-mail szolgáltatás az Egyesült Államokban működik.",
+    "para1": "Az Ön iCloud adatai Apple adatközpontjaiban tárolódnak, amelyek különböző országokban lehetnek az Ön régiójától és Apple ID beállításaitól függően. A háttérszerverünk (Railway) különböző globális régiókban működik. A SendGrid e-mail szolgáltatás elsősorban az Egyesült Államokban működik.",
     "para2": "Az alkalmazás használatával Ön hozzájárul az adatoknak az irányelvben leírt módon történő feldolgozásához. Ezek az országok különböző adatvédelmi törvényekkel rendelkezhetnek, mint az Ön lakóhelye szerinti ország.",
-    "chinaNote": "**Kínában tartózkodó felhasználók számára:** Az iCloud adatok az Apple kínai adatközpontjaiban tárolódnak, amelyeket a GCBD (Guizhou on the Cloud Big Data) üzemeltet, a kínai adatvédelmi előírásoknak megfelelően."
+    "chinaNote": "<strong>Kínában tartózkodó felhasználók számára:</strong> Az iCloud adatok az Apple kínai adatközpontjaiban tárolódnak, amelyeket a GCBD (Guizhou on the Cloud Big Data) üzemeltet, a kínai adatvédelmi előírásoknak megfelelően."
   },
   "changesToPolicy": {
     "title": "6. Változások ebben az irányelvben",
@@ -249,8 +295,8 @@
     "para1": "A {appName} letöltésével, telepítésével és használatával Ön hozzájárul:",
     "list": [
       "Az adatok gyűjtéséhez és használatához az irányelvben leírtak szerint",
-      "Automatizált riasztások küldéséhez a vészhelyzeti kapcsolattartónak",
-      "Az adatok tárolásához az Ön személyes iCloud fiókjában",
+      "Automatizált riasztások küldéséhez a vészhelyzeti kapcsolattartónak a háttérszerverünkön keresztül",
+      "Az adatok tárolásához az Ön személyes iCloud fiókjában (Key-Value Storage és CloudKit)",
       "A 2. szakaszban leírt feltételekhez és korlátozásokhoz"
     ]
   },

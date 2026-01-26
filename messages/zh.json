@@ -8,7 +8,7 @@
   "hero": {
     "title": "内心的安宁",
     "subtitle": "为独居者而设计",
-    "description": "一款简单可靠的应用，通过每日签到帮助亲友监测彼此的安全状况。如果您连续三天未签到，您的紧急联系人将自动收到通知。",
+    "description": "一款简单可靠的应用，通过每日签到帮助亲友监测彼此的安全状况。如果您连续两天未签到，您的紧急联系人将自动收到通知。",
     "downloadButton": "在App Store下载",
     "screenshotPlaceholder": "应用截图占位符"
   },
@@ -21,7 +21,7 @@
     },
     "automaticAlerts": {
       "title": "自动提醒",
-      "description": "如果您连续三天未签到，您的紧急联系人将自动收到通知。"
+      "description": "如果您连续两天未签到，您的紧急联系人将在第三天自动收到通知。"
     },
     "privacyFirst": {
       "title": "隐私优先",

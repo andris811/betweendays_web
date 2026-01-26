@@ -30,7 +30,7 @@
       "para1": "If you miss checking in for two consecutive days, the app automatically sends an email on the third day to your chosen emergency contact.",
       "para2": "You acknowledge and accept:",
       "list": [
-        "Emails are sent automatically, without human intervention",
+        "Emails are sent automatically via our server, without human intervention",
         "Email delivery is not guaranteed (depends on email providers, internet connectivity)",
         "The app cannot confirm whether the recipient reads or acts on the message",
         "False alarms may occur if you forget to check in"
@@ -84,16 +84,25 @@
       },
       "syncedToIcloud": {
         "title": "Synced to iCloud",
-        "para1": "To allow data recovery when reinstalling the app or switching devices, the following data is automatically synced to your personal iCloud account:",
+        "para1": "To allow data recovery when reinstalling the app or switching devices, the following data is automatically synced to your personal iCloud account using iCloud Key-Value Storage:",
         "list": [
-          "Your name",
+          "Your name (if provided)",
           "Emergency contact email address",
-          "Last check-in date",
+          "Last check-in date and time",
           "Check-in history (last 30 days)",
           "Consecutive missed days count (calculated value)",
           "App preferences (language, text size)"
+        ]
+      },
+      "syncedToCloudkit": {
+        "title": "Also Synced to CloudKit",
+        "para1": "As an additional backup mechanism, your data is also synced to your private CloudKit database:",
+        "list": [
+          "Device identifier (anonymous UUID, not linked to your Apple ID)",
+          "All data listed above in \"Synced to iCloud\"",
+          "Sync timestamp"
         ],
-        "important": "**Important:** Data is synced using iCloud Key-Value Storage, which is tied to your Apple ID. Only you can access this data across your devices. We do not have access to your iCloud data."
+        "important": "**Important:** Both iCloud Key-Value Storage and CloudKit data are tied to your Apple ID. Only you can access this data across your devices. We do not have access to your iCloud or CloudKit data. Your data is stored in Apple's secure infrastructure."
       }
     },
     "howDataIsUsed": {
@@ -103,7 +112,7 @@
         "Tracking your daily check-ins",
         "Calculating consecutive missed days",
         "Sending automated email alerts to your emergency contact when needed",
-        "Syncing data to your personal iCloud account for backup and recovery",
+        "Syncing data to your personal iCloud account for backup and recovery across devices",
         "Personalizing app preferences (language, text size)"
       ],
       "weDoNot": "We do not:",
@@ -117,16 +126,23 @@
       ]
     },
     "emailSending": {
-      "title": "3.3 Email Sending",
-      "para1": "Automated alert emails are sent via <strong>SendGrid</strong>, a third-party email service provider.",
-      "para2": "When an alert is triggered:",
-      "list": [
-        "An email is sent <strong>exclusively</strong> to your provided emergency contact",
-        "The email contains: your name (if provided), missed days count, and instructions for the recipient",
-        "Emails are marked as automated with \"DO NOT REPLY\" warnings",
-        "The email is sent from: safety@betweendays.app"
+      "title": "3.3 Email Sending Service",
+      "para1": "Automated alert emails are sent via SendGrid, a third-party email service provider, through our backend server.",
+      "para2": "<strong>How it works:</strong>",
+      "howItWorks": [
+        "When the app detects you've missed 2+ consecutive days, it sends an escalation request to our server",
+        "Our server (hosted on Railway) processes the request and sends an email via SendGrid",
+        "The email is sent exclusively to your provided emergency contact"
       ],
-      "para3": "SendGrid processes the email content only for delivery purposes and does not use your data for other purposes."
+      "para3": "<strong>Email contents:</strong>",
+      "list": [
+        "Your name (if provided)",
+        "Number of consecutive days missed",
+        "Instructions for the recipient on what to do",
+        "Automated \"DO NOT REPLY\" warnings",
+        "Sent from: safety@betweendays.app"
+      ],
+      "para4": "SendGrid processes the email content only for delivery purposes and does not use your data for other purposes."
     },
     "pushNotifications": {
       "title": "3.4 Push Notifications",
@@ -143,19 +159,29 @@
         ]
       },
       "cloudStorage": {
-        "title": "Cloud Storage (iCloud)",
+        "title": "iCloud Storage (Key-Value Storage & CloudKit)",
         "list": [
           "Data is stored in your personal iCloud account (operated by Apple)",
           "Transmitted via encrypted connections",
           "Protected by your Apple ID password and two-factor authentication",
           "<strong>Persists even after deleting the app</strong> (to allow data recovery)",
-          "Accessible only from devices signed in with your Apple ID"
+          "Accessible only from devices signed in with your Apple ID",
+          "Stored in Apple's secure data centers"
+        ]
+      },
+      "backendServer": {
+        "title": "Backend Server (Railway)",
+        "list": [
+          "Hosted on Railway's secure infrastructure",
+          "Does not store your personal data permanently",
+          "Only processes escalation email requests in real-time",
+          "Communicates with SendGrid via secure API for email delivery"
         ]
       }
     },
     "dataRetention": {
       "title": "3.6 Data Retention",
-      "para1": "Your data is stored in two places with different retention policies:",
+      "para1": "Your data is stored in multiple places with different retention policies:",
       "onYourDevice": {
         "title": "On Your Device",
         "list": [
@@ -164,19 +190,30 @@
         ]
       },
       "inIcloud": {
-        "title": "In iCloud",
+        "title": "In iCloud (Key-Value Storage & CloudKit)",
         "list": [
           "Data <strong>persists even after deleting the app</strong>",
           "This allows data recovery if you reinstall the app",
-          "To permanently delete data:"
-        ],
+          "Synchronized across all your devices signed in with the same Apple ID"
+        ]
+      },
+      "onRailwayServer": {
+        "title": "On Railway Server",
+        "list": [
+          "No permanent data storage",
+          "Escalation requests are processed in real-time and not retained"
+        ]
+      },
+      "toPermanentlyDelete": {
+        "title": "To permanently delete all data:",
         "steps": [
           "Open the app",
           "Go to Settings",
           "Use the \"Reset All Data\" option",
           "Then uninstall the app"
         ],
-        "para": "If you uninstall without resetting, data will remain in iCloud and will be restored if you reinstall the app with the same Apple ID."
+        "para1": "If you uninstall without resetting, data will remain in iCloud and will be restored if you reinstall the app with the same Apple ID.",
+        "para2": "<strong>Note:</strong> iCloud data is managed by Apple. Deleting data from our app removes it from iCloud Key-Value Storage and CloudKit, but Apple may retain backups according to their data retention policies."
       }
     },
     "yourRightsAndControl": {
@@ -188,7 +225,7 @@
         "<strong>Modify</strong> app preferences (language, text size)",
         "<strong>Stop future alerts</strong> by removing the emergency contact email",
         "<strong>Delete all data</strong> using the \"Reset All Data\" option in Settings",
-        "<strong>Request data deletion</strong> by contacting support (see Section 8)"
+        "<strong>Request data deletion assistance</strong> by contacting support (see Section 8)"
       ]
     },
     "thirdPartyServices": {
@@ -197,10 +234,19 @@
       "icloud": {
         "title": "iCloud (Apple)",
         "list": [
-          "Purpose: Cloud data storage and sync",
-          "Data shared: App data syncs to your personal iCloud account",
+          "Purpose: Cloud data storage and sync for backup and device-to-device sync",
+          "Data shared: App data syncs to your personal iCloud account via Key-Value Storage and CloudKit",
           "Privacy policy: https://www.apple.com/legal/privacy/",
           "Note: This is your own iCloud account - we do not have access to this data"
+        ]
+      },
+      "railway": {
+        "title": "Railway",
+        "list": [
+          "Purpose: Backend server hosting for processing escalation email requests",
+          "Data shared: Email address, name, missed days count (only when escalation is triggered)",
+          "Data retention: No permanent storage - real-time processing only",
+          "Privacy policy: https://railway.app/legal/privacy"
         ]
       },
       "sendgrid": {
@@ -211,7 +257,7 @@
           "Privacy policy: https://www.twilio.com/legal/privacy"
         ]
       },
-      "para2": "These services are bound by their own privacy policies. We choose trusted providers with strong privacy practices."
+      "para2": "These services are bound by their own privacy policies. We choose trusted providers with strong privacy practices and enterprise-grade security."
     },
     "dataSharingAndDisclosure": {
       "title": "3.9 Data Sharing and Disclosure",
@@ -219,11 +265,11 @@
       "para2": "We may only disclose your information:",
       "list": [
         "To your designated emergency contact (as part of the alert email)",
-        "To third-party service providers (SendGrid) to the extent necessary to deliver email alerts",
+        "To third-party service providers (Railway, SendGrid) to the extent necessary to deliver email alerts",
         "When required by legal process or statutory obligation",
         "To protect rights, property, or safety"
       ],
-      "para3": "Note: Your iCloud data is stored in your personal iCloud account and is not shared with us or third parties."
+      "para3": "<strong>Note:</strong> Your iCloud data is stored in your personal iCloud account and is not shared with us or third parties."
     }
   },
   "childrensPrivacy": {
@@ -231,9 +277,9 @@
     "para2": "If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately so we can delete it."
   },
   "internationalUsers": {
-    "para1": "Your iCloud data is stored in Apple data centers, which may be located in different countries depending on your region and Apple ID settings. SendGrid's email service operates in the United States.",
+    "para1": "Your iCloud data is stored in Apple data centers, which may be located in different countries depending on your region and Apple ID settings. Our backend server (Railway) operates in various global regions. SendGrid's email service operates primarily in the United States.",
     "para2": "By using the app, you consent to the processing of data as described in this policy. These countries may have different data protection laws than your country of residence.",
-    "chinaNote": "**For users in China:** iCloud data is stored in Apple's data centers in China, operated by GCBD (Guizhou on the Cloud Big Data), in accordance with Chinese data protection regulations."
+    "chinaNote": "<strong>For users in China:</strong> iCloud data is stored in Apple's data centers in China, operated by GCBD (Guizhou on the Cloud Big Data), in accordance with Chinese data protection regulations."
   },
   "changesToPolicy": {
     "para1": "We may update these Terms of Use and Privacy Policy from time to time. Changes will be indicated by updating the \"Last updated\" date at the top of this page.",
@@ -244,8 +290,8 @@
     "para1": "By downloading, installing, and using {appName}, you consent to:",
     "list": [
       "The collection and use of data as described in this policy",
-      "Sending automated alerts to your emergency contact",
-      "Storing data in your personal iCloud account",
+      "Sending automated alerts to your emergency contact via our backend server",
+      "Storing data in your personal iCloud account (Key-Value Storage and CloudKit)",
       "The terms and limitations described in Section 2"
     ]
   },

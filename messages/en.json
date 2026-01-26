@@ -8,7 +8,7 @@
   "hero": {
     "title": "Peace of Mind",
     "subtitle": "For Those Who Live Alone",
-    "description": "A simple, reliable app that helps friends and family monitor each other's well-being through daily check-ins. If you miss check-ins for three consecutive days, your emergency contact is automatically notified.",
+    "description": "A simple, reliable app that helps friends and family monitor each other's well-being through daily check-ins. If you miss check-ins for two consecutive days, your emergency contact is automatically notified.",
     "downloadButton": "Download on App Store",
     "screenshotPlaceholder": "App Screenshot Placeholder"
   },
@@ -21,7 +21,7 @@
     },
     "automaticAlerts": {
       "title": "Automatic Alerts",
-      "description": "If you miss check-ins for three consecutive days, your emergency contact is automatically notified."
+      "description": "If you miss check-ins for two consecutive days, your emergency contact is automatically notified on the third day."
     },
     "privacyFirst": {
       "title": "Privacy First",

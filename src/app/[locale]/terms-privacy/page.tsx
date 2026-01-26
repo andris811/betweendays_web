@@ -139,8 +139,20 @@ export default function TermsPrivacyPage() {
                 <li key={index}>{item}</li>
               ))}
             </ul>
+
+            <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+              {tTerms('privacyPolicy.whatDataWeCollect.syncedToCloudkit.title')}
+            </h4>
+            <p>
+              {tTerms('privacyPolicy.whatDataWeCollect.syncedToCloudkit.para1')}
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              {(tTerms.raw('privacyPolicy.whatDataWeCollect.syncedToCloudkit.list') as unknown as string[]).map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
             <p className="font-semibold">
-              {tTerms('privacyPolicy.whatDataWeCollect.syncedToIcloud.important')}
+              {tTerms('privacyPolicy.whatDataWeCollect.syncedToCloudkit.important')}
             </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -168,23 +180,31 @@ export default function TermsPrivacyPage() {
               {tTerms('privacyPolicy.emailSending.title')}
             </h3>
             <p>
-              {tTerms.rich('privacyPolicy.emailSending.para1', {
+              {tTerms('privacyPolicy.emailSending.para1')}
+            </p>
+            <p>
+              {tTerms.rich('privacyPolicy.emailSending.para2', {
                 strong: (chunks) => <strong>{chunks}</strong>
               })}
             </p>
-            <p>{tTerms('privacyPolicy.emailSending.para2')}</p>
+            <ol className="list-decimal pl-6 space-y-2">
+              {(tTerms.raw('privacyPolicy.emailSending.howItWorks') as unknown as string[]).map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ol>
+            <p>
+              {tTerms.rich('privacyPolicy.emailSending.para3', {
+                strong: (chunks) => <strong>{chunks}</strong>
+              })}
+            </p>
             <ul className="list-disc pl-6 space-y-2">
               {(tTerms.raw('privacyPolicy.emailSending.list') as unknown as string[]).map((item, index) => (
-                <li key={index}>
-                  {typeof item === 'string' && item.includes('<strong>')
-                    ? <span dangerouslySetInnerHTML={{ __html: item }} />
-                    : item}
-                </li>
+                <li key={index}>{item}</li>
               ))}
             </ul>
-             <p>
-               {tTerms('privacyPolicy.emailSending.para3')}
-             </p>
+            <p>
+              {tTerms('privacyPolicy.emailSending.para4')}
+            </p>
 
              <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
                {tTerms('privacyPolicy.pushNotifications.title')}
@@ -216,6 +236,15 @@ export default function TermsPrivacyPage() {
                     ? <span dangerouslySetInnerHTML={{ __html: item }} />
                     : item}
                 </li>
+              ))}
+            </ul>
+
+            <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+              {tTerms('privacyPolicy.dataStorageAndSecurity.backendServer.title')}
+            </h4>
+            <ul className="list-disc pl-6 space-y-2">
+              {(tTerms.raw('privacyPolicy.dataStorageAndSecurity.backendServer.list') as unknown as string[]).map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
 
@@ -251,13 +280,31 @@ export default function TermsPrivacyPage() {
                 </li>
               ))}
             </ul>
+
+            <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+              {tTerms('privacyPolicy.dataRetention.onRailwayServer.title')}
+            </h4>
+            <ul className="list-disc pl-6 space-y-2">
+              {(tTerms.raw('privacyPolicy.dataRetention.onRailwayServer.list') as unknown as string[]).map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+
+            <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+              {tTerms('privacyPolicy.dataRetention.toPermanentlyDelete.title')}
+            </h4>
             <ol className="list-decimal pl-6 space-y-2">
-              {(tTerms.raw('privacyPolicy.dataRetention.inIcloud.steps') as unknown as string[]).map((step, index) => (
+              {(tTerms.raw('privacyPolicy.dataRetention.toPermanentlyDelete.steps') as unknown as string[]).map((step, index) => (
                 <li key={index}>{step}</li>
               ))}
             </ol>
             <p>
-              {tTerms('privacyPolicy.dataRetention.inIcloud.para')}
+              {tTerms('privacyPolicy.dataRetention.toPermanentlyDelete.para1')}
+            </p>
+            <p>
+              {tTerms.rich('privacyPolicy.dataRetention.toPermanentlyDelete.para2', {
+                strong: (chunks) => <strong>{chunks}</strong>
+              })}
             </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -284,6 +331,15 @@ export default function TermsPrivacyPage() {
             </h4>
             <ul className="list-disc pl-6 space-y-2">
               {(tTerms.raw('privacyPolicy.thirdPartyServices.icloud.list') as unknown as string[]).map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+
+            <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+              {tTerms('privacyPolicy.thirdPartyServices.railway.title')}
+            </h4>
+            <ul className="list-disc pl-6 space-y-2">
+              {(tTerms.raw('privacyPolicy.thirdPartyServices.railway.list') as unknown as string[]).map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>

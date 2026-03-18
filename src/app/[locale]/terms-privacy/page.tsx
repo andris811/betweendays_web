@@ -282,10 +282,10 @@ export default function TermsPrivacyPage() {
             </ul>
 
             <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
-              {tTerms('privacyPolicy.dataRetention.onRailwayServer.title')}
+              {tTerms('privacyPolicy.dataRetention.onBackendServer.title')}
             </h4>
             <ul className="list-disc pl-6 space-y-2">
-              {(tTerms.raw('privacyPolicy.dataRetention.onRailwayServer.list') as unknown as string[]).map((item, index) => (
+              {(tTerms.raw('privacyPolicy.dataRetention.onBackendServer.list') as unknown as string[]).map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -336,19 +336,19 @@ export default function TermsPrivacyPage() {
             </ul>
 
             <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
-              {tTerms('privacyPolicy.thirdPartyServices.railway.title')}
+              {tTerms('privacyPolicy.thirdPartyServices.vercel.title')}
             </h4>
             <ul className="list-disc pl-6 space-y-2">
-              {(tTerms.raw('privacyPolicy.thirdPartyServices.railway.list') as unknown as string[]).map((item, index) => (
+              {(tTerms.raw('privacyPolicy.thirdPartyServices.vercel.list') as unknown as string[]).map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
 
             <h4 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
-              {tTerms('privacyPolicy.thirdPartyServices.sendgrid.title')}
+              {tTerms('privacyPolicy.thirdPartyServices.resend.title')}
             </h4>
             <ul className="list-disc pl-6 space-y-2">
-              {(tTerms.raw('privacyPolicy.thirdPartyServices.sendgrid.list') as unknown as string[]).map((item, index) => (
+              {(tTerms.raw('privacyPolicy.thirdPartyServices.resend.list') as unknown as string[]).map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>

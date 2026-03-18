@@ -1,6 +1,6 @@
 {
   "title": "Terms of Use & Privacy Policy",
-  "lastUpdated": "Last updated: January 2026",
+  "lastUpdated": "Last updated: March 2026",
   "appDescription": "is an iOS application designed to help people who live alone signal their well-being through daily check-ins. If a user does not check in for two consecutive days, the app automatically sends an email alert on the third day to a designated emergency contact asking them to check on the user.",
   "agreeToTerms": "By using the app, you agree to the terms and practices described below.",
   "sections": {
@@ -127,11 +127,11 @@
     },
     "emailSending": {
       "title": "3.3 Email Sending Service",
-      "para1": "Automated alert emails are sent via SendGrid, a third-party email service provider, through our backend server.",
+      "para1": "Automated alert emails are sent via Resend, a third-party email service provider, through our backend server.",
       "para2": "<strong>How it works:</strong>",
       "howItWorks": [
         "When the app detects you've missed 2+ consecutive days, it sends an escalation request to our server",
-        "Our server (hosted on Railway) processes the request and sends an email via SendGrid",
+        "Our server (hosted on Vercel) processes the request and sends an email via Resend",
         "The email is sent exclusively to your provided emergency contact"
       ],
       "para3": "<strong>Email contents:</strong>",
@@ -142,7 +142,7 @@
         "Automated \"DO NOT REPLY\" warnings",
         "Sent from: safety@betweendays.app"
       ],
-      "para4": "SendGrid processes the email content only for delivery purposes and does not use your data for other purposes."
+      "para4": "Resend processes the email content only for delivery purposes and does not use your data for other purposes."
     },
     "pushNotifications": {
       "title": "3.4 Push Notifications",
@@ -170,12 +170,13 @@
         ]
       },
       "backendServer": {
-        "title": "Backend Server (Railway)",
+        "title": "Backend Server (Vercel with Redis Database)",
         "list": [
-          "Hosted on Railway's secure infrastructure",
-          "Does not store your personal data permanently",
-          "Only processes escalation email requests in real-time",
-          "Communicates with SendGrid via secure API for email delivery"
+          "Hosted on Vercel's secure infrastructure",
+          "Stores check-in data in Redis database for escalation monitoring",
+          "Processes escalation email requests when check-in status triggers alerts",
+          "Communicates with Resend via secure API for email delivery",
+          "Data is retained until user checks in, manually requests deletion, or deletes account"
         ]
       }
     },
@@ -197,11 +198,18 @@
           "Synchronized across all your devices signed in with the same Apple ID"
         ]
       },
-      "onRailwayServer": {
-        "title": "On Railway Server",
+      "onBackendServer": {
+        "title": "On Backend Server (Vercel with Redis Database)",
         "list": [
-          "No permanent data storage",
-          "Escalation requests are processed in real-time and not retained"
+          "Stores check-in data for escalation monitoring:",
+          "Device identifier (anonymous UUID, not linked to your Apple ID)",
+          "Name and emergency email",
+          "Last check-in timestamp",
+          "Escalation email history",
+          "Data retained until:",
+          "- User performs a check-in that resets their status",
+          "- User manually deletes from server (contact support)",
+          "- You delete the account"
         ]
       },
       "toPermanentlyDelete": {
@@ -240,21 +248,21 @@
           "Note: This is your own iCloud account - we do not have access to this data"
         ]
       },
-      "railway": {
-        "title": "Railway",
+      "vercel": {
+        "title": "Vercel",
         "list": [
-          "Purpose: Backend server hosting for processing escalation email requests",
-          "Data shared: Email address, name, missed days count (only when escalation is triggered)",
-          "Data retention: No permanent storage - real-time processing only",
-          "Privacy policy: https://railway.app/legal/privacy"
+          "Purpose: Backend server hosting with Redis database for processing escalation email requests and monitoring check-in status",
+          "Data shared: Device ID, name, emergency email, last check-in timestamp, escalation email history",
+          "Data retention: Stored in Redis until user checks in, manually requests deletion, or deletes account",
+          "Privacy policy: https://vercel.com/legal/privacy-policy"
         ]
       },
-      "sendgrid": {
-        "title": "SendGrid (Twilio)",
+      "resend": {
+        "title": "Resend",
         "list": [
           "Purpose: Email delivery for alerts",
           "Data shared: Emergency contact email, your name, alert message content",
-          "Privacy policy: https://www.twilio.com/legal/privacy"
+          "Privacy policy: https://resend.com/legal/privacy-policy"
         ]
       },
       "para2": "These services are bound by their own privacy policies. We choose trusted providers with strong privacy practices and enterprise-grade security."
@@ -265,7 +273,7 @@
       "para2": "We may only disclose your information:",
       "list": [
         "To your designated emergency contact (as part of the alert email)",
-        "To third-party service providers (Railway, SendGrid) to the extent necessary to deliver email alerts",
+        "To third-party service providers (Vercel, Resend) to the extent necessary to deliver email alerts",
         "When required by legal process or statutory obligation",
         "To protect rights, property, or safety"
       ],
@@ -277,7 +285,7 @@
     "para2": "If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately so we can delete it."
   },
   "internationalUsers": {
-    "para1": "Your iCloud data is stored in Apple data centers, which may be located in different countries depending on your region and Apple ID settings. Our backend server (Railway) operates in various global regions. SendGrid's email service operates primarily in the United States.",
+    "para1": "Your iCloud data is stored in Apple data centers, which may be located in different countries depending on your region and Apple ID settings. Our backend server (Vercel) operates in various global regions. Resend's email service operates primarily in the United States.",
     "para2": "By using the app, you consent to the processing of data as described in this policy. These countries may have different data protection laws than your country of residence.",
     "chinaNote": "<strong>For users in China:</strong> iCloud data is stored in Apple's data centers in China, operated by GCBD (Guizhou on the Cloud Big Data), in accordance with Chinese data protection regulations."
   },

@@ -1,6 +1,6 @@
 {
   "title": "Felhasználási feltételek és adatvédelmi irányelvek",
-  "lastUpdated": "Utolsó frissítés: 2026. január",
+  "lastUpdated": "Utolsó frissítés: 2026. március",
   "appDescription": "egy iOS alkalmazás, amelyet azért terveztek, hogy segítse az egyedül élő embereket az egészségi állapotuk jelzésében napi bejelentkezések révén. Ha a felhasználó két egymást követő napig nem jelentkezik be, az alkalmazás automatikusan küld egy e-mail értesítést a harmadik napon a kijelölt vészhelyzeti kapcsolattartónak, hogy ellenőrizze a felhasználót.",
   "agreeToTerms": "Az alkalmazás használatával elfogadja az alább ismertetett feltételeket és gyakorlatokat.",
   "sections": {
@@ -127,11 +127,11 @@
     },
     "emailSending": {
       "title": "3.3 E-mail küldési szolgáltatás",
-      "para1": "Az automatizált riasztási e-maileket a SendGrid (egy harmadik fél e-mail szolgáltató) küldi a háttérszerverünkön keresztül.",
+      "para1": "Az automatizált riasztási e-maileket a Resend (egy harmadik fél e-mail szolgáltató) küldi a háttérszerverünkön keresztül.",
       "para2": "<strong>Működési elv:</strong>",
       "howItWorks": [
         "Amikor az alkalmazás észleli, hogy 2+ egymást követő napot kihagyott, eszkalációs kérést küld a szerverünknek",
-        "A szerverünk (Railway-en üzemeltetett) feldolgozza a kérést és e-mailt küld a SendGrid-en keresztül",
+        "A szerverünk (Vercel-en üzemeltetett) feldolgozza a kérést és e-mailt küld a Resend-en keresztül",
         "Az e-mail kizárólag az Ön megadott vészhelyzeti kapcsolattartójának kerül elküldésre"
       ],
       "para3": "<strong>E-mail tartalma:</strong>",
@@ -142,7 +142,7 @@
         "Automatizált \"NE VÁLASZOLJ\" figyelmeztetések",
         "Küldő: safety@betweendays.app"
       ],
-      "para4": "A SendGrid csak a kézbesítés céljából dolgozza fel az e-mail tartalmat, és nem használja az adatait más célokra."
+      "para4": "A Resend csak a kézbesítés céljából dolgozza fel az e-mail tartalmat, és nem használja az adatait más célokra."
     },
     "pushNotifications": {
       "title": "3.4 Push értesítések",
@@ -170,12 +170,13 @@
         ]
       },
       "backendServer": {
-        "title": "Háttérszerver (Railway)",
+        "title": "Háttérszerver (Vercel Redis adatbázissal)",
         "list": [
-          "A Railway biztonságos infrastruktúráján üzemeltetett",
-          "Nem tárolja tartósan az Ön személyes adatait",
-          "Csak valós időben dolgozza fel az eszkalációs e-mail kéréseket",
-          "Biztonságos API-n keresztül kommunikál a SendGrid-del az e-mail kézbesítéshez"
+          "A Vercel biztonságos infrastruktúráján üzemeltetett",
+          "Bejelentkezési adatokat tárol Redis adatbázisban az eszkaláció figyeléséhez",
+          "Feldolgozza az eszkalációs e-mail kéréseket, amikor a bejelentkezési állapot riasztást vált ki",
+          "Biztonságos API-n keresztül kommunikál a Resend-del az e-mail kézbesítéshez",
+          "Az adatok megmaradnak, amíg a felhasználó bejelentkezik, manuálisan kéri a törlést, vagy törli a fiókot"
         ]
       }
     },
@@ -197,11 +198,18 @@
           "Szinkronizálva van az összes eszközén, amely ugyanazzal az Apple ID-val van bejelentkezve"
         ]
       },
-      "onRailwayServer": {
-        "title": "A Railway szerveren",
+      "onBackendServer": {
+        "title": "A háttérszerveren (Vercel Redis adatbázissal)",
         "list": [
-          "Nincs tartós adattárolás",
-          "Az eszkalációs kéréseket valós időben dolgozzuk fel és nem őrizzük meg"
+          "Bejelentkezési adatokat tárol az eszkaláció figyeléséhez:",
+          "Eszközazonosító (névtelen UUID, nem kapcsolódik az Apple ID-hoz)",
+          "Név és vészhelyzeti e-mail",
+          "Utolsó bejelentkezés időbélyege",
+          "Eszkalációs e-mail előzmények",
+          "Az adatok megmaradnak, amíg:",
+          "- A felhasználó olyan bejelentkezést hajt végre, amely visszaállítja az állapotát",
+          "- A felhasználó manuálisan kéri a szerverről való törlést (kapcsolatfelvétel az ügyfélszolgálattal)",
+          "- Ön törli a fiókot"
         ]
       },
       "toPermanentlyDelete": {
@@ -241,21 +249,21 @@
           "Megjegyzés: Ez az Ön saját iCloud fiókja - mi nem férünk hozzá ezekhez az adatokhoz"
         ]
       },
-      "railway": {
-        "title": "Railway",
+      "vercel": {
+        "title": "Vercel",
         "list": [
-          "Cél: Háttérszerver tárhely az eszkalációs e-mail kérések feldolgozásához",
-          "Megosztott adatok: E-mail cím, név, kihagyott napok száma (csak eszkaláció indításakor)",
-          "Adatmegőrzés: Nincs tartós tárolás - csak valós idejű feldolgozás",
-          "Adatvédelmi irányelvek: https://railway.app/legal/privacy"
+          "Cél: Háttérszerver tárhely Redis adatbázissal az eszkalációs e-mail kérések feldolgozásához és a bejelentkezési állapot figyeléséhez",
+          "Megosztott adatok: Eszközazonosító, név, vészhelyzeti e-mail, utolsó bejelentkezés időbélyege, eszkalációs e-mail előzmények",
+          "Adatmegőrzés: Redis-ben tárolva, amíg a felhasználó bejelentkezik, manuálisan kéri a törlést, vagy törli a fiókot",
+          "Adatvédelmi irányelvek: https://vercel.com/legal/privacy-policy"
         ]
       },
-      "sendgrid": {
-        "title": "SendGrid (Twilio)",
+      "resend": {
+        "title": "Resend",
         "list": [
           "Cél: E-mail kézbesítés riasztásokhoz",
           "Megosztott adatok: Vészhelyzeti kapcsolattartó e-mail, az Ön neve, riasztási üzenet tartalma",
-          "Adatvédelmi irányelvek: https://www.twilio.com/legal/privacy"
+          "Adatvédelmi irányelvek: https://resend.com/legal/privacy-policy"
         ]
       },
       "para2": "Ezeket a szolgáltatásokat saját adatvédelmi irányelveik kötik. Megbízható szolgáltatókat választunk erős adatvédelmi gyakorlatokkal és vállalati szintű biztonsággal."
@@ -266,7 +274,7 @@
       "para2": "Csak a következő esetekben hozhatjuk nyilvánosságra az információit:",
       "list": [
         "Az Ön kijelölt vészhelyzeti kapcsolattartójának (a riasztási e-mail részeként)",
-        "Harmadik fél szolgáltatóknak (Railway, SendGrid) az e-mail riasztások kézbesítéséhez szükséges mértékben",
+        "Harmadik fél szolgáltatóknak (Vercel, Resend) az e-mail riasztások kézbesítéséhez szükséges mértékben",
         "Ha jogi eljárás vagy törvényi kötelezettség indokolja",
         "A jogok, tulajdon vagy biztonság védelme érdekében"
       ],
@@ -280,7 +288,7 @@
   },
   "internationalUsers": {
     "title": "5. Nemzetközi felhasználók",
-    "para1": "Az Ön iCloud adatai Apple adatközpontjaiban tárolódnak, amelyek különböző országokban lehetnek az Ön régiójától és Apple ID beállításaitól függően. A háttérszerverünk (Railway) különböző globális régiókban működik. A SendGrid e-mail szolgáltatás elsősorban az Egyesült Államokban működik.",
+    "para1": "Az Ön iCloud adatai Apple adatközpontjaiban tárolódnak, amelyek különböző országokban lehetnek az Ön régiójától és Apple ID beállításaitól függően. A háttérszerverünk (Vercel) különböző globális régiókban működik. A Resend e-mail szolgáltatás elsősorban az Egyesült Államokban működik.",
     "para2": "Az alkalmazás használatával Ön hozzájárul az adatoknak az irányelvben leírt módon történő feldolgozásához. Ezek az országok különböző adatvédelmi törvényekkel rendelkezhetnek, mint az Ön lakóhelye szerinti ország.",
     "chinaNote": "<strong>Kínában tartózkodó felhasználók számára:</strong> Az iCloud adatok az Apple kínai adatközpontjaiban tárolódnak, amelyeket a GCBD (Guizhou on the Cloud Big Data) üzemeltet, a kínai adatvédelmi előírásoknak megfelelően."
   },
